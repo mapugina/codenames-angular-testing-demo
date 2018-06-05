@@ -1,0 +1,6 @@
+{
+  "/codenames": {
+    "target": "http://127.0.0.1:4815",
+    "changeOrigin": true
+  }
+}
