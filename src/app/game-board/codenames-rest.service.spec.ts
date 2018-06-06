@@ -10,7 +10,7 @@ describe('CodenamesRestService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   let codenamesRestService: CodenamesRestService;
-  const NEW_GAME_URL = '/codenames/game';
+  const NEW_GAME_URL = 'codenames/game';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
