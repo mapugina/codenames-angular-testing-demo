@@ -1,0 +1,6 @@
+<div class="codename-card" [ngClass]="team ? 'team-' + (team | lowercase): ''">
+  <div class="card-front" (click)="reveal()">
+    <p class="codename">{{codename}}</p>
+    <p class="codename codename-inverse">{{codename}}</p>
+  </div>
+</div>

@@ -1,2 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<pre>{{game | json}}</pre>
+<div *ngFor="let card of cards">
+  <app-codename-card [codename]="card.codename" [team]="card.revealed && card.team" (revealed)="reveal(card)"></app-codename-card>
+</div>

@@ -4,6 +4,7 @@ import { CodenamesRestService } from './codenames-rest.service';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { CodenameCardComponent } from './codename-card/codename-card.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule
   ],
-  declarations: [],
+  exports: [
+    CodenameCardComponent
+  ],
+  declarations: [
+    CodenameCardComponent
+  ],
   providers: [
     CodenamesRestService
   ]
