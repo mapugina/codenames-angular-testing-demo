@@ -1,0 +1,9 @@
+<p>First Team: <span class="first-team">{{game && game.firstTeam}}</span></p>
+
+<div class="codename-cards">
+  <app-codename-card *ngFor="let card of cards"
+                     [codename]="card.codename"
+                     [team]="card.team"
+                     (revealed)="reveal(card)">
+  </app-codename-card>
+</div>

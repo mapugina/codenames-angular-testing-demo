@@ -1,4 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div *ngFor="let card of cards">
-  <app-codename-card [codename]="card.codename" [team]="card.revealed && card.team" (revealed)="reveal(card)"></app-codename-card>
-</div>
+<button (click)="fetchGame()">New Game</button>
+
+<app-codenames-game [game]="game" (gameOver)="gameOver($event)"></app-codenames-game>

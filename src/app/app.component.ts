@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {CodenamesRestService} from './game-board/codenames-rest.service';
 import {ICodeNameGameData} from './game-board/icode-name-game-data';
-import {CodenameTeam} from './game-board/codename-team.enum';
 
 interface ICardScope {
   codename: string;
@@ -21,8 +20,8 @@ export class AppComponent {
   reds: Set<string>;
   blues: Set<string>;
 
-  constructor(codeNamesRestService: CodenamesRestService) {
-    codeNamesRestService.newGame().subscribe(x => {
+  public fetchGame() {
+    this.codeNamesRestService.newGame().subscribe(x => {
       this.game = x;
       this.cards = x.selection.map(codename => ({
         codename,
@@ -35,15 +34,12 @@ export class AppComponent {
     });
   }
 
-  reveal(card: ICardScope) {
-    const reds = new Set(this.game.reds);
-    const blues = new Set(this.game.blues);
+  constructor(private codeNamesRestService: CodenamesRestService) {
+    this.fetchGame();
+  }
 
-    card.revealed = true;
-    card.team = this.game.assassin === card.codename ?
-      CodenameTeam.assassin :
-      reds.has(card.codename) ? CodenameTeam.red :
-        blues.has(card.codename) ? CodenameTeam.blue :
-          CodenameTeam.bystander;
+  public gameOver(winner) {
+    alert(`this game is over ${winner} wins!`);
+    this.fetchGame();
   }
 }

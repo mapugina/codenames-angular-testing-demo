@@ -1,0 +1,9 @@
+.codename-cards {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: auto auto auto auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
